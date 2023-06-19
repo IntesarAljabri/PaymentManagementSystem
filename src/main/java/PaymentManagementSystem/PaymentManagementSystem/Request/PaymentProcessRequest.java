@@ -12,22 +12,26 @@ import java.util.Date;
 @Getter
 @Setter
 public class PaymentProcessRequest {
+
     Integer paymentId;
     Long amount;
     String currency;
-    PaymentMethod paymentMethod;
-    Long cardNumber;
-    Date expriationDate;
+    String methodType;
+    String cardNumber;
+    String expirationDate;
+    String cvv;
 
-    public PaymentProcess convertToPaymentProcess() {
-        Date nowDate = new Date();
-        PaymentProcess paymentProcess = new PaymentProcess();
-        paymentProcess.setPaymentId(this.getPaymentId());
-        paymentProcess.setAmount(this.getAmount());
-        paymentProcess.setCurrency(this.getCurrency());
-        paymentProcess.setPaymentMethod(this.getPaymentMethod());
-        paymentProcess.setCardNumber(this.getCardNumber());
-        paymentProcess.setExpriationDate(this.getExpriationDate());
-        return paymentProcess;
-    }
+
+      public PaymentProcess convertToPaymentProcess() {
+            Date nowDate = new Date();
+            PaymentProcess paymentProcess = new PaymentProcess();
+            paymentProcess.setPaymentId(this.getPaymentId());
+            paymentProcess.setAmount(this.getAmount());
+            paymentProcess.setCurrency(this.getCurrency());
+            paymentProcess.setMethodType(this.getMethodType());
+            paymentProcess.setCardNumber(this.getCardNumber());
+            paymentProcess.setExpirationDate(this.getExpirationDate());
+            paymentProcess.setCvv(this.getCvv());
+            return paymentProcess;
+        }
 }

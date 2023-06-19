@@ -17,7 +17,6 @@ public class RegistrationResponse {
     String password;
     String email;
 
-
     public static RegistrationResponse convertRegistrationToResponse(Registration RegistrationRequest) {
         return RegistrationResponse.builder()
                 .registerId(RegistrationRequest.getRegisterId())

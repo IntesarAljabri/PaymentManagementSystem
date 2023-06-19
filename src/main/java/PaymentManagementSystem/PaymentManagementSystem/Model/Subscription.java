@@ -1,4 +1,4 @@
 package PaymentManagementSystem.PaymentManagementSystem.Model;
 
-public class Subscription {
+public class Subscription extends BaseEntity{
 }

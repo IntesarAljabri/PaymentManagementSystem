@@ -15,7 +15,6 @@ public class RegistrationController {
     @Autowired
     RegistrationService registrationService;
 
-
     @GetMapping(value = "getRegistrationById")
     public Registration getRegistrationById(@RequestParam Integer id) {
         Registration registrationById = registrationService.getRegistrationById(id);

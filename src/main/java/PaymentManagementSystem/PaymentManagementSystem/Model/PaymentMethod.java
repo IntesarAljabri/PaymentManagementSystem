@@ -1,6 +1,23 @@
 package PaymentManagementSystem.PaymentManagementSystem.Model;
 
-public class PaymentMethod {
+import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+@Setter
+@Getter
+@Entity
+@Data
+@Table(name = "PaymentMethod")
+public class PaymentMethod extends BaseEntity{
+     Long amount;
+     String currency;
+     String methodType;
+     String cardNumber;
+     String expirationDate;
+     String cvv;
 
 }

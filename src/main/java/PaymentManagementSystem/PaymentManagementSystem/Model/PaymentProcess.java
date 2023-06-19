@@ -5,21 +5,18 @@ import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
-import java.util.Date;
 @Setter
 @Getter
 @Entity
 @Data
 @Table(name = "PaymentProcess")
-public class PaymentProcess {
+public class PaymentProcess extends PaymentMethod{
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     Integer paymentId;
-    Long amount;
-    String currency;
-    PaymentMethod paymentMethod;
-    Long cardNumber;
-    Date expriationDate;
+
+    @JoinColumn(name = "registerId", referencedColumnName = "id") // FK
+    Registration registration;
 }
