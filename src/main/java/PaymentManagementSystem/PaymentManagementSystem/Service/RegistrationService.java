@@ -24,5 +24,8 @@ public class RegistrationService {
         registrationRepository.save(registration);
     }
 
-
+    public Registration getRegistrationById(Integer id) {
+        Registration registrationById = registrationRepository.getRegistrationById(id);
+        return registrationById;
+    }
 }
