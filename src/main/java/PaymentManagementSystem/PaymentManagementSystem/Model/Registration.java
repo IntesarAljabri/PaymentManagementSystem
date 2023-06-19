@@ -20,4 +20,5 @@ public class Registration extends BaseEntity{
     String userName;
     String password;
     String email;
+
 }
