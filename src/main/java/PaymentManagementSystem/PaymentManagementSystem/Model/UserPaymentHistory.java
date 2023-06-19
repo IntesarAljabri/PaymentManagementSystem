@@ -8,7 +8,7 @@ import javax.persistence.OneToOne;
 
 @Data
 @Entity
-public class PaymentHistory extends BaseEntity{
+public class UserPaymentHistory extends BaseEntity{
 
     @OneToOne
     @JoinColumn(name = "registerId", referencedColumnName = "id") // FK

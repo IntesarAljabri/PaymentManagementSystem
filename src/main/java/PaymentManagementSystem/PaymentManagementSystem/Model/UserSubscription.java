@@ -12,5 +12,5 @@ import javax.persistence.Table;
 @Entity
 @Data
 @Table(name = "Subscription")
-public class Subscription extends BaseEntity{
+public class UserSubscription extends BaseEntity{
 }

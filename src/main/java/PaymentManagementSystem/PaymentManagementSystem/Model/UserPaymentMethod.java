@@ -12,7 +12,7 @@ import javax.persistence.Table;
 @Entity
 @Data
 @Table(name = "PaymentMethod")
-public class PaymentMethod extends BaseEntity{
+public class UserPaymentMethod extends BaseEntity{
      Long amount;
      String currency;
      String methodType;

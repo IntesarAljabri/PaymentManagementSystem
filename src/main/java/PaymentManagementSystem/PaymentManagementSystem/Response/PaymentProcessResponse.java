@@ -1,8 +1,6 @@
 package PaymentManagementSystem.PaymentManagementSystem.Response;
 
-import PaymentManagementSystem.PaymentManagementSystem.Model.PaymentMethod;
-import PaymentManagementSystem.PaymentManagementSystem.Model.PaymentProcess;
-import PaymentManagementSystem.PaymentManagementSystem.Model.Registration;
+import PaymentManagementSystem.PaymentManagementSystem.Model.UserPaymentProcess;
 import lombok.Builder;
 import lombok.Data;
 import lombok.Getter;
@@ -23,15 +21,15 @@ public class PaymentProcessResponse {
     String expirationDate;
     String cvv;
 
-    public static PaymentProcessResponse convertPaymentProcessToResponse(PaymentProcess paymentProcess) {
+    public static PaymentProcessResponse convertPaymentProcessToResponse(UserPaymentProcess userpaymentProcess) {
         return PaymentProcessResponse.builder()
-                .paymentId(paymentProcess.getPaymentId())
-                .amount(paymentProcess.getAmount())
-                .currency(paymentProcess.getCurrency())
-                .methodType(paymentProcess.getMethodType())
-                .cardNumber(paymentProcess.getCardNumber())
-                .expirationDate(paymentProcess.getExpirationDate())
-                .cvv(paymentProcess.getCvv())
+                .paymentId(userpaymentProcess.getPaymentId())
+                .amount(userpaymentProcess.getAmount())
+                .currency(userpaymentProcess.getCurrency())
+                .methodType(userpaymentProcess.getMethodType())
+                .cardNumber(userpaymentProcess.getCardNumber())
+                .expirationDate(userpaymentProcess.getExpirationDate())
+                .cvv(userpaymentProcess.getCvv())
                 .build();
     }
 

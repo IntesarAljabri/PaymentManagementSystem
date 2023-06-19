@@ -10,13 +10,15 @@ import javax.persistence.*;
 @Getter
 @Entity
 @Data
-@Table(name = "Transaction")
-public class Transaction extends BaseEntity{
+@Table(name = "Registration")
+public class UserRegistration extends BaseEntity{
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-     Long transactionId;
-     double amount;
-     String currency;
-     String status;
+    @Column(name = "id")
+    Integer registerId;
+    String userName;
+    String password;
+    String email;
+
 }

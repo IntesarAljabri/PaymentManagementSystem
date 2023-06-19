@@ -5,20 +5,18 @@ import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
-
 @Setter
 @Getter
 @Entity
 @Data
-@Table(name = "Register")
-public class Registration extends BaseEntity{
+@Table(name = "PaymentProcess")
+public class UserPaymentProcess extends UserPaymentMethod{
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
-    Integer registerId;
-    String userName;
-    String password;
-    String email;
+    Integer paymentId;
 
+    @JoinColumn(name = "registerId", referencedColumnName = "id") // FK
+    Registration registration;
 }
