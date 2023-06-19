@@ -9,7 +9,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/api/payments")
+@RequestMapping("/api/paymentProcess")
 public class PaymentProcessController {
 
     @Autowired
@@ -24,4 +24,5 @@ public class PaymentProcessController {
         // Assuming the payment processing is successful, return a 201 Created response
         return ResponseEntity.status(HttpStatus.CREATED).body("Payment processed successfully");
     }
+
 }

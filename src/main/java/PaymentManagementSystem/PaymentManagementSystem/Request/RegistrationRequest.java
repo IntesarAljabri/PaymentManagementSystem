@@ -29,7 +29,4 @@ public class RegistrationRequest {
         return registration;
     }
 
-
-
-
 }

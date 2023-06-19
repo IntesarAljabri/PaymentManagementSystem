@@ -8,8 +8,6 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface RegistrationRepository extends JpaRepository<Registration, Integer> {
-
     @Query(value = "SELECT r FROM Registration r where r.id=:id")
     public Registration getRegistrationById(@Param("id") Integer id);
-
 }

@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/api")
+@RequestMapping("/api/Registration")
 public class RegistrationController {
     @Autowired
     RegistrationService registrationService;
@@ -20,7 +20,6 @@ public class RegistrationController {
         Registration registrationById = registrationService.getRegistrationById(id);
         return registrationById;
     }
-
     @GetMapping("/api")
     public ResponseEntity<String> RequestEndpoint() {
         // Return a 200 OK response with a custom message
