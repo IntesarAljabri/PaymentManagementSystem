@@ -3,6 +3,7 @@ package PaymentManagementSystem.PaymentManagementSystem.Model;
 import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
+import org.springframework.boot.autoconfigure.security.saml2.Saml2RelyingPartyProperties;
 
 import javax.persistence.*;
 
@@ -19,4 +20,12 @@ public class UserTransaction extends BaseEntity{
      double amount;
      String currency;
      String status;
+
+    @ManyToOne
+    @JoinColumn(name = "registerId")
+    private UserRegistration userRegistration;
+
+    @ManyToOne
+    @JoinColumn(name = "transactionId")
+    private UserTransaction transaction;
 }

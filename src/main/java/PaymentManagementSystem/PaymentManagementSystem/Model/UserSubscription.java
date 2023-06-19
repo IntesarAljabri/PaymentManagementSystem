@@ -5,6 +5,8 @@ import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.Entity;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Setter
@@ -13,4 +15,12 @@ import javax.persistence.Table;
 @Data
 @Table(name = "Subscription")
 public class UserSubscription extends BaseEntity{
+
+    @ManyToOne
+    @JoinColumn(name = "registerId")
+    private UserRegistration userRegistration;
+
+    @ManyToOne
+    @JoinColumn(name = "subscriptionId")
+    private UserSubscription usersubscription;
 }
