@@ -23,7 +23,7 @@ public class RegistrationController {
     }
 
     @GetMapping("/api")
-    public ResponseEntity<String> exampleEndpoint() {
+    public ResponseEntity<String> RequestEndpoint() {
         // Return a 200 OK response with a custom message
         return ResponseEntity.ok("Success!");
     }
