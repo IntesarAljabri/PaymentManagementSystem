@@ -4,31 +4,30 @@ import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 
-import javax.persistence.Entity;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Setter
 @Getter
 @Entity
 @Data
-@Table(name = "PaymentMethod")
+@Table(name = "User_Payment_Method")
 public class UserPaymentMethod extends BaseEntity{
-     Integer id;
-     Long amount;
-     String currency;
-     String methodType;
-     String cardNumber;
-     String expirationDate;
-     String cvv;
+
+     @Id
+     @GeneratedValue(strategy = GenerationType.IDENTITY)
+     private Long id;
+
+     private String methodType;
+     private String cardNumber;
+     private String expirationDate;
+     private String cvv;
 
      @ManyToOne
      @JoinColumn(name = "registerId")
      private UserRegistration userRegistration;
 
      @ManyToOne
-     @JoinColumn(name = "id")
-     private UserPaymentMethod userpaymentMethod;
+     @JoinColumn(name = "userPaymentId")
+     private UserPaymentProcess userPaymentProcess;
 
 }
