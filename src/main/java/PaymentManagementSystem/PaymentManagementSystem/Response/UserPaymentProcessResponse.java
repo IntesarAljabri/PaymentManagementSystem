@@ -12,17 +12,13 @@ import lombok.Setter;
 @Setter
 @Builder
 public class UserPaymentProcessResponse {
-    Long amount;
-    String currency;
     String methodType;
     String cardNumber;
     String expirationDate;
     String cvv;
 
-    public static PaymentProcessResponse convertUserPaymentMethodToResponse(UserPaymentMethod userpaymentMethod) {
-        return PaymentProcessResponse.builder()
-                .amount(userpaymentMethod.getAmount())
-                .currency(userpaymentMethod.getCurrency())
+    public static UserPaymentProcessResponse convertUserPaymentMethodToResponse(UserPaymentMethod userpaymentMethod) {
+        return UserPaymentProcessResponse.builder()
                 .methodType(userpaymentMethod.getMethodType())
                 .cardNumber(userpaymentMethod.getCardNumber())
                 .expirationDate(userpaymentMethod.getExpirationDate())

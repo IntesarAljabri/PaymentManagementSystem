@@ -9,14 +9,13 @@ import javax.persistence.*;
 @Getter
 @Entity
 @Data
-@Table(name = "PaymentProcess")
+@Table(name = "User_Payment_Process")
 public class UserPaymentProcess extends UserPaymentMethod{
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id")
-    Integer paymentId;
+    Integer userPaymentId;
+    Long amount;
+    String currency;
 
     @JoinColumn(name = "registerId", referencedColumnName = "id") // FK
-    Registration registration;
+    UserRegistration userregistration;
 }
