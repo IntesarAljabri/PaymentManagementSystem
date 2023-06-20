@@ -11,6 +11,7 @@ import java.util.Date;
 @Getter
 @Setter
 public class UserPaymentMethodRequest {
+    Integer id;
     Long amount;
     String currency;
     String methodType;
@@ -21,8 +22,6 @@ public class UserPaymentMethodRequest {
     public UserPaymentMethod convertToUserPayment() {
         Date nowDate = new Date();
         UserPaymentMethod userpaymentMethod = new UserPaymentMethod();
-        userpaymentMethod.setAmount(this.getAmount());
-        userpaymentMethod.setCurrency(this.getCurrency());
         userpaymentMethod.setMethodType(this.getMethodType());
         userpaymentMethod.setCardNumber(this.getCardNumber());
         userpaymentMethod.setExpirationDate(this.getExpirationDate());

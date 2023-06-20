@@ -22,8 +22,6 @@ public class UserPaymentMethodService {
     public static void updateUserPaymentMethod(UserPaymentMethodRequest userpaymentMethodRequest) {
 
         UserPaymentMethod userpaymentMethod = new UserPaymentMethod();
-        userpaymentMethod.setAmount(userpaymentMethod.getAmount());
-        userpaymentMethod.setCurrency(userpaymentMethod.getCurrency());
         userpaymentMethod.setMethodType(userpaymentMethod.getMethodType());
         userpaymentMethod.setCardNumber(userpaymentMethod.getCardNumber());
         userpaymentMethod.setExpirationDate(userpaymentMethod.getExpirationDate());
