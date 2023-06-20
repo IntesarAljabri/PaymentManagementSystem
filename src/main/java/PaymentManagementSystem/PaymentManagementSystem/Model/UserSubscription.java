@@ -8,13 +8,19 @@ import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import java.time.LocalDate;
 
 @Setter
 @Getter
 @Entity
 @Data
-@Table(name = "Subscription")
+@Table(name = "User_Subscription")
 public class UserSubscription extends BaseEntity{
+
+    Long userId;
+    Long planId;
+    LocalDate startDate;
+    LocalDate endDate;
 
     @ManyToOne
     @JoinColumn(name = "registerId")
@@ -23,4 +29,5 @@ public class UserSubscription extends BaseEntity{
     @ManyToOne
     @JoinColumn(name = "subscriptionId")
     private UserSubscription usersubscription;
+
 }
