@@ -8,6 +8,6 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface UserPaymentMethodRepository extends JpaRepository<UserPaymentMethod, Integer> {
-    @Query(value = "UPDATE PaymentMethod p Set p.isActive = false")
+    @Query(value = "UPDATE p User_Payment_Method p WHERE p.id =:id")
      void deleteAllPaymentMethod();
 }
