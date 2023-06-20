@@ -3,7 +3,6 @@ package PaymentManagementSystem.PaymentManagementSystem.Model;
 import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
-import org.springframework.boot.autoconfigure.security.saml2.Saml2RelyingPartyProperties;
 
 import javax.persistence.*;
 
@@ -11,7 +10,7 @@ import javax.persistence.*;
 @Getter
 @Entity
 @Data
-@Table(name = "Transaction")
+@Table(name = "User_Transaction")
 public class UserTransaction extends BaseEntity{
 
     @Id
