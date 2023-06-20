@@ -1,7 +1,8 @@
 package PaymentManagementSystem.PaymentManagementSystem.Controller;
 
-import PaymentManagementSystem.PaymentManagementSystem.Model.Registration;
-import PaymentManagementSystem.PaymentManagementSystem.Service.RegistrationService;
+
+import PaymentManagementSystem.PaymentManagementSystem.Model.UserRegistration;
+import PaymentManagementSystem.PaymentManagementSystem.Service.UserRegistrationService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -10,15 +11,15 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/api/Registration")
-public class RegistrationController {
+@RequestMapping("/api/userrRegistration")
+public class UserRegistrationController {
     @Autowired
-    RegistrationService registrationService;
+    UserRegistrationService userregistrationService;
 
-    @GetMapping(value = "getRegistrationById")
-    public Registration getRegistrationById(@RequestParam Integer id) {
-        Registration registrationById = registrationService.getRegistrationById(id);
-        return registrationById;
+    @GetMapping(value = "getUserRegistrationById")
+    public UserRegistration getUserRegistrationById(@RequestParam Integer id) {
+        UserRegistration userregistrationById = userregistrationService.getUserRegistrationById(id);
+        return userregistrationById;
     }
     @GetMapping("/api")
     public ResponseEntity<String> RequestEndpoint() {
