@@ -16,6 +16,7 @@ public class UserPaymentMethodResponse {
     String cardNumber;
     String expirationDate;
     String cvv;
+
     public static UserPaymentProcessResponse convertToUserPaymentProcessResponse(UserPaymentProcess userPaymentProcess) {
         return UserPaymentProcessResponse.builder()
                 .methodType(userPaymentProcess.getMethodType())

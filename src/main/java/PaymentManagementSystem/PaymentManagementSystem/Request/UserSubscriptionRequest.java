@@ -5,7 +5,6 @@ import PaymentManagementSystem.PaymentManagementSystem.Model.UserTransaction;
 import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
-
 import java.time.LocalDate;
 import java.util.Date;
 
@@ -15,12 +14,11 @@ import java.util.Date;
 public class UserSubscriptionRequest {
     Long userId;
     Long planId;
-    LocalDate startDate;
-    LocalDate endDate;
+    Date startDate;
+    Date endDate;
 
     public UserSubscription covertUserSubscriptionToResponse(UserSubscription userSubscription) {
         Date nowDate = new Date();
-//        UserSubscription userSubscription = new UserSubscription();
         userSubscription.setUserId(this.getUserId());
         userSubscription.setPlanId(this.getPlanId());
         userSubscription.setStartDate(this.getStartDate());

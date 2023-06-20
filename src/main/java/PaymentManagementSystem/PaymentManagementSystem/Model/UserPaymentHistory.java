@@ -5,20 +5,22 @@ import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.util.Date;
 
 @Setter
 @Getter
 @Entity
 @Data
-@Table(name = "user_registration")
-public class UserRegistration extends BaseEntity {
+@Table(name = "User_Payment_History")
+public class UserPaymentHistory extends BaseEntity{
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id")
-    Integer Id;
-    String userName;
-    String password;
-    String email;
+    private Long userId;
 
+     String paymentId;
+     Long amount;
+     String currency;
+     Date date;
+     String status;
 }

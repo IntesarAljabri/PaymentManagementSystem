@@ -12,7 +12,7 @@ import java.util.Date;
 @Setter
 public class UserTransactionRequest {
     Long transactionId;
-    double amount;
+    Long amount;
     String currency;
     String status;
 
@@ -20,7 +20,7 @@ public class UserTransactionRequest {
         Date nowDate = new Date();
         UserTransaction usertransaction = new UserTransaction();
         usertransaction.setTransactionId(this.getTransactionId());
-        usertransaction.setAmount(this.getAmount());
+        usertransaction.setAmount((long) this.getAmount());
         usertransaction.setCurrency(this.getCurrency());
         usertransaction.setStatus(this.getStatus());
         usertransaction.setCreateDate(nowDate);

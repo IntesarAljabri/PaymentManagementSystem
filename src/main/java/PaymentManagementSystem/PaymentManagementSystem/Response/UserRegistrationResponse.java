@@ -19,7 +19,7 @@ public class UserRegistrationResponse {
 
     public static UserRegistrationResponse convertUserRegistrationToResponse(UserRegistration userRegistrationRequest) {
         return UserRegistrationResponse.builder()
-                .registerId(userRegistrationRequest.getRegisterId())
+                .registerId(userRegistrationRequest.getId())
                 .userName(userRegistrationRequest.getUserName())
                 .password(userRegistrationRequest.getPassword())
                 .email(userRegistrationRequest.getEmail())

@@ -4,10 +4,13 @@ import PaymentManagementSystem.PaymentManagementSystem.Model.UserPaymentProcess;
 import PaymentManagementSystem.PaymentManagementSystem.Repository.UserPaymentProcessRepository;
 import PaymentManagementSystem.PaymentManagementSystem.Repository.UserRegistrationRepository;
 import PaymentManagementSystem.PaymentManagementSystem.Request.UserPaymentProcessRequest;
+import PaymentManagementSystem.PaymentManagementSystem.Response.UserPaymentHistoryResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 @Service
 public class UserPaymentProcessService {
@@ -31,5 +34,14 @@ public class UserPaymentProcessService {
         userpaymentProcessRepository.save(newPayment);
     }
 
-
+    public static List<UserPaymentProcess> convert(List<UserPaymentProcess> requestList) {
+        List<UserPaymentProcess> userPaymentProcesses = new ArrayList<>();
+        if (!requestList.isEmpty()) {
+            for (UserPaymentProcess userPaymentHistoryResponse : requestList) {
+                UserPaymentProcess userPaymentProcess = new UserPaymentProcess();
+                userPaymentProcesses.add(userPaymentProcess);
+            }
+        }
+        return userPaymentProcesses;
+    }
 }

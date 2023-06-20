@@ -13,7 +13,7 @@ import lombok.Setter;
 @Builder
 public class UserTransactionResponse {
     Long transactionId;
-    double amount;
+    Long amount;
     String currency;
     String status;
 

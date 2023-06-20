@@ -21,6 +21,7 @@ public class UserRegistrationController {
         UserRegistration userregistrationById = userregistrationService.getUserRegistrationById(id);
         return userregistrationById;
     }
+
     @GetMapping("/api")
     public ResponseEntity<String> RequestEndpoint() {
         // Return a 200 OK response with a custom message

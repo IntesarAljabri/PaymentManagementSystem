@@ -11,8 +11,9 @@ import java.util.List;
 
 @Repository
 public interface UserTransactionRepository extends JpaRepository<UserTransaction, Long> {
-    @Query(value = "SELECT t FROM User_Transaction ")
+    @Query(value = "SELECT t FROM UserTransaction t")
     List<UserTransaction> getAllUserTransaction();
-    @Query(value = "SELECT t FROM User_Transaction where t.id=:id")
+
+    @Query(value = "SELECT t FROM UserTransaction t WHERE t.id = :id")
     UserTransaction getUserTransactionById(@Param("id") Long id);
 }

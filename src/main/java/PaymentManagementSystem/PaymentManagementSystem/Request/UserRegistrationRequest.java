@@ -12,7 +12,7 @@ import java.util.Date;
 @Setter
 public class UserRegistrationRequest {
 
-    Integer registerId;
+    Integer id;
     String userName;
     String password;
     String email;
@@ -20,7 +20,7 @@ public class UserRegistrationRequest {
     public UserRegistration convertToUSerRegistration() {
         Date nowDate = new Date();
         UserRegistration userregistration = new UserRegistration();
-        userregistration.setRegisterId(this.getRegisterId());
+        userregistration.setId(this.getId());
         userregistration.setPassword(this.getPassword());
         userregistration.setUserName(this.getUserName());
         userregistration.setEmail(this.getEmail());

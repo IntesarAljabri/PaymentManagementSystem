@@ -11,11 +11,11 @@ import javax.persistence.*;
 @Entity
 @Data
 @Table(name = "User_Payment_Method")
-public class UserPaymentMethod extends BaseEntity{
+public class UserPaymentMethod extends BaseEntity {
 
      @Id
      @GeneratedValue(strategy = GenerationType.IDENTITY)
-     private Long id;
+     private Integer id;
 
      private String methodType;
      private String cardNumber;
@@ -23,11 +23,9 @@ public class UserPaymentMethod extends BaseEntity{
      private String cvv;
 
      @ManyToOne
-     @JoinColumn(name = "registerId")
-     private UserRegistration userRegistration;
-
-     @ManyToOne
      @JoinColumn(name = "userPaymentId")
      private UserPaymentProcess userPaymentProcess;
-
+     @ManyToOne
+     @JoinColumn(name = "user_registration_id") // Adjust the column name as per your database schema
+     private UserRegistration userRegistration;
 }

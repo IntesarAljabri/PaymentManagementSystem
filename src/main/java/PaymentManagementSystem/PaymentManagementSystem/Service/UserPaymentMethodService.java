@@ -12,13 +12,13 @@ import java.util.Date;
 @Service
 public class UserPaymentMethodService {
     @Autowired
-    static
-    UserPaymentMethodRepository userpaymentMethodRepository;
+    static UserPaymentMethodRepository userpaymentMethodRepository;
 
 
     public UserPaymentMethod addUserPaymentMethod(UserPaymentMethod userpaymentMethod) {
         return userpaymentMethodRepository.save(userpaymentMethod);
     }
+
     public static void updateUserPaymentMethod(UserPaymentMethodRequest userpaymentMethodRequest) {
 
         UserPaymentMethod userpaymentMethod = new UserPaymentMethod();
@@ -32,6 +32,7 @@ public class UserPaymentMethodService {
         userpaymentMethodRepository.save(userpaymentMethod);
 
     }
+
     public void deleteAllUserPaymentMethods() {
         userpaymentMethodRepository.deleteAll();
     }

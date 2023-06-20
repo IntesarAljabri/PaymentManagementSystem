@@ -4,23 +4,23 @@ import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 
-import javax.persistence.Entity;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.Table;
-import java.time.LocalDate;
+import javax.persistence.*;
+import java.util.Date;
+
 
 @Setter
 @Getter
 @Entity
 @Data
 @Table(name = "User_Subscription")
-public class UserSubscription extends BaseEntity{
-
+public class UserSubscription extends UserPaymentMethod {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id;
     Long userId;
     Long planId;
-    LocalDate startDate;
-    LocalDate endDate;
+    Date startDate;
+    Date endDate;
 
     @ManyToOne
     @JoinColumn(name = "registerId")

@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.text.ParseException;
+
 @RestController
 @RequestMapping("/api/paymentMethod")
 public class UserPaymentMethodController {
@@ -23,6 +24,7 @@ public class UserPaymentMethodController {
         userPaymentMethodService.addUserPaymentMethod(userPaymentMethod);
         return ResponseEntity.ok("Payment method added");
     }
+
     @RequestMapping(value = "updateUserPayment")
     public void updateUserPayment(@RequestBody UserPaymentMethodRequest userpaymentMethodRequest)
             throws ParseException {

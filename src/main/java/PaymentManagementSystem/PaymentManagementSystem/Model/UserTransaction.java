@@ -11,20 +11,18 @@ import javax.persistence.*;
 @Entity
 @Data
 @Table(name = "User_Transaction")
-public class UserTransaction extends BaseEntity{
+public class UserTransaction extends BaseEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-     Long transactionId;
-     double amount;
-     String currency;
-     String status;
+    @Column(name = "transaction_id")
+    private Long transactionId;
+
+    Long amount;
+    String currency;
+    String status;
 
     @ManyToOne
     @JoinColumn(name = "registerId")
     private UserRegistration userRegistration;
-
-    @ManyToOne
-    @JoinColumn(name = "transactionId")
-    private UserTransaction transaction;
 }

@@ -9,6 +9,6 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface UserRegistrationRepository extends JpaRepository<UserRegistration, Integer> {
-    @Query(value = "SELECT r FROM User_Registration where r.id=:id")
-     UserRegistration getUserRegistrationById(@Param("id") Integer id);
+    @Query(value = "SELECT r FROM UserRegistration r where r.id = :id")
+    UserRegistration getUserRegistrationById(@Param("id") Integer id);
 }

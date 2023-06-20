@@ -15,6 +15,7 @@ public class UserSubscriptionService {
     public UserSubscription getUserSubscriptionById(Integer id) {
         return userSubscriptionRepository.getUserSubscriptionById(id);
     }
+
     public UserSubscription createUserSubscription(UserSubscriptionRequest userSubscriptionRequest) {
         // Map data from UserSubscriptionRequest to UserSubscription entity
         UserSubscription userSubscription = new UserSubscription();
@@ -27,12 +28,4 @@ public class UserSubscriptionService {
         UserSubscription savedUserSubscription = userSubscriptionRepository.save(userSubscription);
         return userSubscription;
     }
-
-//    public UserSubscription cancelUserSubscription(String subscriptionId) {
-//        UserSubscription userSubscription = userSubscriptionRepository.findById(Integer.valueOf(subscriptionId)).orElse(null);
-//        if (userSubscription != null) {
-//            userSubscription.setCancelled(true);
-//            userSubscriptionRepository.save(userSubscription);
-//        }
-//    }
 }
