@@ -7,7 +7,6 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 @Repository
 public interface UserPaymentProcessRepository extends JpaRepository<UserPaymentProcess, Integer> {
-
     @Query("SELECT u FROM UserPaymentProcess u WHERE u.id= :id")
     List<UserPaymentProcess> findById(@Param("id") Long id);
 }
