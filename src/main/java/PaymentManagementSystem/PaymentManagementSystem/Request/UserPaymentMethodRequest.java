@@ -1,10 +1,8 @@
 package PaymentManagementSystem.PaymentManagementSystem.Request;
-
 import PaymentManagementSystem.PaymentManagementSystem.Model.UserPaymentMethod;
 import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
-
 import java.util.Date;
 
 @Data
@@ -16,7 +14,7 @@ public class UserPaymentMethodRequest {
     String currency;
     String methodType;
     String cardNumber;
-    String expirationDate;
+    Date expirationDate;
     String cvv;
 
     public UserPaymentMethod convertToUserPayment() {

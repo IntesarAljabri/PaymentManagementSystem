@@ -14,11 +14,12 @@ public class UserPaymentMethodService {
     @Autowired
     static UserPaymentMethodRepository userpaymentMethodRepository;
 
-
+    //********To add PaymentMethod **************
     public UserPaymentMethod addUserPaymentMethod(UserPaymentMethod userpaymentMethod) {
         return userpaymentMethodRepository.save(userpaymentMethod);
     }
 
+    //*********To Update UserPaymentMethod***************
     public static void updateUserPaymentMethod(UserPaymentMethodRequest userpaymentMethodRequest) {
 
         UserPaymentMethod userpaymentMethod = new UserPaymentMethod();
@@ -33,6 +34,7 @@ public class UserPaymentMethodService {
 
     }
 
+    //*********To delete All UserPaymentMethod*************
     public void deleteAllUserPaymentMethods() {
         userpaymentMethodRepository.deleteAll();
     }

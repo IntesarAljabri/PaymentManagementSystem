@@ -1,6 +1,4 @@
 package PaymentManagementSystem.PaymentManagementSystem.Controller;
-
-
 import PaymentManagementSystem.PaymentManagementSystem.Model.UserPaymentMethod;
 import PaymentManagementSystem.PaymentManagementSystem.Request.UserPaymentMethodRequest;
 import PaymentManagementSystem.PaymentManagementSystem.Service.UserPaymentMethodService;
@@ -19,12 +17,14 @@ public class UserPaymentMethodController {
     @Autowired
     UserPaymentMethodService userPaymentMethodService;
 
+    //*****************To add PaymentMethods by check if 200 ok
     @PostMapping("/addPaymentMethod")
     public ResponseEntity<String> addPaymentMethod(@RequestBody UserPaymentMethod userPaymentMethod) {
         userPaymentMethodService.addUserPaymentMethod(userPaymentMethod);
         return ResponseEntity.ok("Payment method added");
     }
 
+    //***********To update  UserPayment**************
     @RequestMapping(value = "updateUserPayment")
     public void updateUserPayment(@RequestBody UserPaymentMethodRequest userpaymentMethodRequest)
             throws ParseException {
