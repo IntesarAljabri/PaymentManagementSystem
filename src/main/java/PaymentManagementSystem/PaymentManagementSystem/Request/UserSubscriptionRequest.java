@@ -1,11 +1,8 @@
 package PaymentManagementSystem.PaymentManagementSystem.Request;
-
 import PaymentManagementSystem.PaymentManagementSystem.Model.UserSubscription;
-import PaymentManagementSystem.PaymentManagementSystem.Model.UserTransaction;
 import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
-import java.time.LocalDate;
 import java.util.Date;
 
 @Data
@@ -16,6 +13,7 @@ public class UserSubscriptionRequest {
     Long planId;
     Date startDate;
     Date endDate;
+
 
     public UserSubscription covertUserSubscriptionToResponse(UserSubscription userSubscription) {
         Date nowDate = new Date();

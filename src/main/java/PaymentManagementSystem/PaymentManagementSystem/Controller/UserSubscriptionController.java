@@ -1,5 +1,4 @@
 package PaymentManagementSystem.PaymentManagementSystem.Controller;
-
 import PaymentManagementSystem.PaymentManagementSystem.Model.UserSubscription;
 import PaymentManagementSystem.PaymentManagementSystem.Request.UserSubscriptionRequest;
 import PaymentManagementSystem.PaymentManagementSystem.Service.UserSubscriptionService;
@@ -15,12 +14,15 @@ public class UserSubscriptionController {
     UserSubscriptionService userSubscriptionService;
 
 
+    //*******************To get UserSubscription by id**************
     @GetMapping(value = "getUserSubscriptionById")
     public UserSubscription getUserSubscriptionById(@RequestParam Integer id) {
         UserSubscription getUserSubscriptionById = userSubscriptionService.getUserSubscriptionById(id);
         return getUserSubscriptionById;
     }
 
+
+    //**************To check by 201 is created in UserSubscription*******
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
     public UserSubscription createUSerSubscription(@RequestBody UserSubscriptionRequest userSubscriptionRequest) {

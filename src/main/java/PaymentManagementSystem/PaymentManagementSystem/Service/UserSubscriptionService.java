@@ -8,14 +8,16 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class UserSubscriptionService {
-
     @Autowired
     UserSubscriptionRepository userSubscriptionRepository;
 
+
+    //*********To get UserSubscription by Id**********
     public UserSubscription getUserSubscriptionById(Integer id) {
         return userSubscriptionRepository.getUserSubscriptionById(id);
     }
 
+    //********** To Create UserSubscription By inter full information******
     public UserSubscription createUserSubscription(UserSubscriptionRequest userSubscriptionRequest) {
         // Map data from UserSubscriptionRequest to UserSubscription entity
         UserSubscription userSubscription = new UserSubscription();
@@ -23,7 +25,6 @@ public class UserSubscriptionService {
         userSubscription.setPlanId(userSubscriptionRequest.getPlanId());
         userSubscription.setStartDate(userSubscriptionRequest.getStartDate());
         userSubscription.setEndDate(userSubscriptionRequest.getEndDate());
-
         // Save the UserSubscription entity to the database
         UserSubscription savedUserSubscription = userSubscriptionRepository.save(userSubscription);
         return userSubscription;
