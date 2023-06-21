@@ -1,9 +1,7 @@
 package PaymentManagementSystem.PaymentManagementSystem.Model;
-
 import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
-
 import javax.persistence.*;
 
 @Setter
@@ -19,6 +17,6 @@ public class UserPaymentProcess extends UserPaymentMethod {
     String currency;
 
     @ManyToOne
-    @JoinColumn(name = "user_registration_id") // Adjust the column name as per your database schema
+    @JoinColumn(name = "user_registration_id")
     private UserRegistration userRegistration;
 }

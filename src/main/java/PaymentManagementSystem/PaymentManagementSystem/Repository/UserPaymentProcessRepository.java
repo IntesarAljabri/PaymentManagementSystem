@@ -1,5 +1,4 @@
 package PaymentManagementSystem.PaymentManagementSystem.Repository;
-
 import PaymentManagementSystem.PaymentManagementSystem.Model.UserPaymentProcess;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
@@ -8,6 +7,7 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 @Repository
 public interface UserPaymentProcessRepository extends JpaRepository<UserPaymentProcess, Integer> {
+
     @Query("SELECT u FROM UserPaymentProcess u WHERE u.id= :id")
-    List<UserPaymentProcess> findByStatus(@Param("id") Long id);
+    List<UserPaymentProcess> findById(@Param("id") Long id);
 }

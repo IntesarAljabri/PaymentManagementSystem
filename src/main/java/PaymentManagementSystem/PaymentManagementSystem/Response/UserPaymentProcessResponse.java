@@ -7,6 +7,8 @@ import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.util.Date;
+
 @Data
 @Getter
 @Setter
@@ -14,7 +16,7 @@ import lombok.Setter;
 public class UserPaymentProcessResponse {
     String methodType;
     String cardNumber;
-    String expirationDate;
+    Date expirationDate;
     String cvv;
 
     public static UserPaymentProcessResponse convertUserPaymentMethodToResponse(UserPaymentMethod userpaymentMethod) {

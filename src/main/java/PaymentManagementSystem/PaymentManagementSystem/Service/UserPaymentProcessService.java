@@ -20,13 +20,14 @@ public class UserPaymentProcessService {
     @Autowired
     UserRegistrationRepository userregistrationRepository;
 
+
+    //********To create UserPaymentProcess*******
     public void createUserPayment(UserPaymentProcessRequest userpaymentProcessRequest) {
         UserPaymentProcess newPayment = new UserPaymentProcess();
         newPayment.setAmount((long) 100.50);
         newPayment.setCurrency("USD");
         newPayment.setMethodType("credit_card");
         newPayment.setCardNumber("4111111111111111L");
-        newPayment.setExpirationDate("10/2");
         newPayment.setCvv("123");
         newPayment.setCreateDate(new Date());
         newPayment.setIsActive(true);
@@ -34,6 +35,7 @@ public class UserPaymentProcessService {
         userpaymentProcessRepository.save(newPayment);
     }
 
+    //*******To print all list for UserPaymentProcess********
     public static List<UserPaymentProcess> convert(List<UserPaymentProcess> requestList) {
         List<UserPaymentProcess> userPaymentProcesses = new ArrayList<>();
         if (!requestList.isEmpty()) {
