@@ -10,6 +10,7 @@ import lombok.Getter;
 import lombok.Setter;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -23,21 +24,21 @@ import java.util.List;
 public class UserPaymentHistoryResponse {
 
     private Long id;
-
     String paymentId;
     Long amount;
     String currency;
     Date date;
     String status;
 
-    public UserSubscriptionResponse convertUserSubscriptionToResponse(UserSubscription userSubscription) {
-        UserSubscriptionResponse response = new UserSubscriptionResponse();
-        response.setUserId(userSubscription.getUserId());
-        response.setPlanId(userSubscription.getPlanId());
-        response.setStartDate(userSubscription.getStartDate());
-        response.setEndDate(userSubscription.getEndDate());
-        return response;
-    }
+
+//    public UserSubscriptionResponse convertUserSubscriptionToResponse(UserSubscription userSubscription) {
+//        UserSubscriptionResponse response = new UserSubscriptionResponse();
+//        response.setUserId(userSubscription.getUserId());
+//        response.setPlanId(userSubscription.getPlanId());
+//        response.setStartDate(userSubscription.getStartDate());
+//        response.setEndDate(userSubscription.getEndDate());
+//        return response;
+//    }
 
     public UserPaymentHistoryResponse convertToUserPaymentHistoryResponse(UserPaymentHistory userPaymentHistory) {
         return UserPaymentHistoryResponse.builder()
@@ -50,9 +51,9 @@ public class UserPaymentHistoryResponse {
     }
 
     @GetMapping("/api/payment-history")
-    public ResponseEntity<UserPaymentHistoryResponse> setPayments(List<UserPaymentHistory> paymentList) {
-        // Retrieve payment history for the user based on the provided user ID
-        List<UserPaymentHistory> paymentHistory = UserPaymentHistoryService.getAllUserPaymentHistory();
+    public ResponseEntity<UserPaymentHistoryResponse> getUserPaymentHistory(@RequestParam("userId") Long userId) {
+        // Retrieve payment history for the given user ID
+        List<UserPaymentHistory> paymentHistory = UserPaymentHistoryService.getUserPaymentHistoryById(userId);
 
         // Create the Payment objects and populate them with data
         UserPaymentHistory payment1 = new UserPaymentHistory();
@@ -78,5 +79,6 @@ public class UserPaymentHistoryResponse {
     }
 
 }
+
 
 
