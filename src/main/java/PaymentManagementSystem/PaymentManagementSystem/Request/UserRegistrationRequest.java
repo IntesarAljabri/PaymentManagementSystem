@@ -1,17 +1,14 @@
 package PaymentManagementSystem.PaymentManagementSystem.Request;
-
 import PaymentManagementSystem.PaymentManagementSystem.Model.UserRegistration;
 import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
-
 import java.util.Date;
 
 @Data
 @Getter
 @Setter
 public class UserRegistrationRequest {
-
     Integer id;
     String userName;
     String password;

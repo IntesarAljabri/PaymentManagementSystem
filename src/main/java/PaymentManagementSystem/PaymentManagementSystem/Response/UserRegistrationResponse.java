@@ -26,5 +26,4 @@ public class UserRegistrationResponse {
                 .build();
     }
 
-
 }

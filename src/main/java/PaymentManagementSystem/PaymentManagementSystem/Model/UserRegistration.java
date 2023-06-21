@@ -1,9 +1,7 @@
 package PaymentManagementSystem.PaymentManagementSystem.Model;
-
 import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
-
 import javax.persistence.*;
 
 @Setter
@@ -12,7 +10,6 @@ import javax.persistence.*;
 @Data
 @Table(name = "user_registration")
 public class UserRegistration extends BaseEntity {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
