@@ -15,25 +15,29 @@ public class UserRegistrationService {
     @Autowired
     UserRegistrationRepository userregistrationRepository;
 
-    //******** To create new UserRegistration**************
+    //******** To create new UserRegistration and check it by try and catch**************
     public void CreateRegisterAccount(UserRegistrationRequest registrationRequest) {
-        UserRegistration userregistration = new UserRegistration();
-        userregistration.setUserName(registrationRequest.getUserName());
-        userregistration.setPassword(registrationRequest.getPassword());
-        userregistration.setEmail(registrationRequest.getEmail());
-        userregistration.setCreateDate(new Date());
-        userregistration.setIsActive(true);
-        userregistrationRepository.save(userregistration);
-    }
-
-    //*******To check newUserRegistration by try and catch ************
-    public void createUserRegistration(Integer id, String username, String password, String email) throws Exception {
         try {
-            UserRegistrationRepository.createUserRegistration(id, username, password, email);
+            UserRegistration userregistration = new UserRegistration();
+            userregistration.setUserName(registrationRequest.getUserName());
+            userregistration.setPassword(registrationRequest.getPassword());
+            userregistration.setEmail(registrationRequest.getEmail());
+            userregistration.setCreateDate(new Date());
+            userregistration.setIsActive(true);
+            userregistrationRepository.save(userregistration);
         } catch (Exception e) {
             e.printStackTrace();
-            throw new Exception("Failed to create registration.");
+            // Handle or log the exception as needed
         }
+
+    //*******To check newUserRegistration by try and catch ************
+//    public void createUserRegistration(Integer id, String username, String password, String email) throws Exception {
+//        try {
+//            UserRegistrationRepository.createUserRegistration(id, username, password, email);
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//            throw new Exception("Failed to create registration.");
+//        }
     }
 
     //********* To get UserRegistration by id******************

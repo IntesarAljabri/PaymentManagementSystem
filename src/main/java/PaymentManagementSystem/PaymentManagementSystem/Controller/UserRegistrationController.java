@@ -1,5 +1,6 @@
 package PaymentManagementSystem.PaymentManagementSystem.Controller;
 import PaymentManagementSystem.PaymentManagementSystem.Model.UserRegistration;
+import PaymentManagementSystem.PaymentManagementSystem.Response.UserRegistrationResponse;
 import PaymentManagementSystem.PaymentManagementSystem.Service.UserRegistrationService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -14,11 +15,20 @@ public class UserRegistrationController {
     @Autowired
     UserRegistrationService userregistrationService;
 
-    //********To get UserRegistration by id***************
+    //********To get UserRegistration by id and check it by try and catch***************
     @GetMapping(value = "getUserRegistrationById")
-    public UserRegistration getUserRegistrationById(@RequestParam Integer id) {
+    public UserRegistrationResponse getUserRegistrationById(@RequestParam Integer id) {
+        try {
         UserRegistration registrationById = userregistrationService.getUserRegistrationById(id);
-        return registrationById;
+            if (registrationById == null) {
+                System.err.println("UserRegistration is not found ");
+                return null;
+            }
+            return UserRegistrationResponse.convertUserRegistrationToResponse(registrationById);
+        } catch (Exception e) {
+            System.err.println("Internal Server Error: " + e.getMessage());
+            return null; // or return an appropriate error response
+        }
     }
 
     //*************To get message if response =200 ok that mean created********
