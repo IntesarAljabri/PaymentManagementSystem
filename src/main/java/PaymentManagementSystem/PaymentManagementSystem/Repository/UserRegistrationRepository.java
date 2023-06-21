@@ -3,11 +3,11 @@ import PaymentManagementSystem.PaymentManagementSystem.Model.UserRegistration;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
-import javax.transaction.Transactional;
-
+@EnableJpaRepositories
 @Repository
 public interface UserRegistrationRepository extends JpaRepository<UserRegistration, Integer> {
     @Query(value = "SELECT r FROM UserRegistration r where r.id = :id")
