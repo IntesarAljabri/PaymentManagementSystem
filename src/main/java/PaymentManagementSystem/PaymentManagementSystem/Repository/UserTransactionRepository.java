@@ -9,7 +9,6 @@ import java.util.List;
 
 @Repository
 public interface UserTransactionRepository extends JpaRepository<UserTransaction, Long> {
-
     @Query(value = "SELECT t FROM UserTransaction t")
     List<UserTransaction> getAllUserTransaction();
 
