@@ -1,10 +1,8 @@
 package PaymentManagementSystem.PaymentManagementSystem.Request;
-
 import PaymentManagementSystem.PaymentManagementSystem.Model.UserTransaction;
 import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
-
 import java.util.Date;
 
 @Data
@@ -15,6 +13,7 @@ public class UserTransactionRequest {
     Long amount;
     String currency;
     String status;
+
 
     public UserTransaction convertToUSerTransaction() {
         Date nowDate = new Date();

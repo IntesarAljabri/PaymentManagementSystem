@@ -25,5 +25,4 @@ public class UserTransactionResponse {
                 .status(usertransaction.getStatus())
                 .build();
     }
-
 }

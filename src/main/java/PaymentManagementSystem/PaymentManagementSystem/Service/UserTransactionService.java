@@ -12,13 +12,15 @@ public class UserTransactionService {
     @Autowired
     UserTransactionRepository usertransactionRepository;
 
+    //***********To get All UserTransaction
     public static List<UserTransaction> getAllUserTransaction() {
         return getAllUserTransaction();
     }
 
+    //***********To get UserTransaction by id**********
     public UserTransaction getUserTransactionById(Integer id) {
-        UserTransaction usertransactionById = (UserTransaction) usertransactionRepository;
-        return usertransactionById;
+        UserTransaction transactionById = (UserTransaction) usertransactionRepository;
+        return transactionById;
     }
 
 }

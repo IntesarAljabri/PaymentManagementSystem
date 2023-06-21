@@ -1,6 +1,4 @@
 package PaymentManagementSystem.PaymentManagementSystem.Repository;
-
-
 import PaymentManagementSystem.PaymentManagementSystem.Model.UserTransaction;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
@@ -11,6 +9,7 @@ import java.util.List;
 
 @Repository
 public interface UserTransactionRepository extends JpaRepository<UserTransaction, Long> {
+
     @Query(value = "SELECT t FROM UserTransaction t")
     List<UserTransaction> getAllUserTransaction();
 
